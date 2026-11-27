@@ -1,0 +1,32 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Pertahankan header Authorization Bearer untuk PHP CGI / PHP-FPM / LiteSpeed
+  RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+  # Arahkan seluruh request /api/* ke backend PHP (jika dijalankan di hosting PHP/Apache tanpa Node.js)
+  RewriteRule ^api/(.*)$ api/index.php?_route=/$1 [QSA,L]
+
+  # Jangan rewrite file atau folder fisik yang ada
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # SPA Fallback untuk React
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+<IfModule mod_setenvif.c>
+  SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+</IfModule>
+
+# Lindungi file sensitif (.env, dump SQL, database lokal, log) agar tidak bisa diakses langsung dari browser
+<FilesMatch "(^\.env|\.(env|sql|db|sqlite|sqlite3|log)$)">
+  <IfModule mod_authz_core.c>
+    Require all denied
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+  </IfModule>
+</FilesMatch>

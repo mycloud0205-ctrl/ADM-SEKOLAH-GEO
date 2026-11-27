@@ -1,0 +1,142 @@
+{
+  "entities": {
+    "pengaturan": {
+      "name": "pengaturan",
+      "properties": {
+        "id": { "type": "number" },
+        "nama_sekolah": { "type": "string", "maxLength": 180 },
+        "alamat_sekolah": { "type": "string", "maxLength": 500 },
+        "tahun_ajaran": { "type": "string", "maxLength": 32 },
+        "jenjang_sekolah": { "type": "string", "maxLength": 16 },
+        "nama_walikelas": { "type": "string", "maxLength": 150 },
+        "kelas_ampu": { "type": "string", "maxLength": 64 },
+        "lat_gps": { "type": "number" },
+        "lng_gps": { "type": "number" },
+        "radius_meter": { "type": "number" },
+        "footer_app": { "type": "string", "maxLength": 255 },
+        "logo_sekolah": { "type": "string", "maxLength": 500000 }
+      }
+    },
+    "siswa": {
+      "name": "siswa",
+      "properties": {
+        "nis": { "type": "string", "maxLength": 64 },
+        "nama": { "type": "string", "maxLength": 180 },
+        "kelas": { "type": "string", "maxLength": 64 },
+        "jurusan": { "type": "string", "maxLength": 120 },
+        "jk": { "type": "string", "maxLength": 16 },
+        "tempat_pkl": { "type": "string", "maxLength": 180 },
+        "nilai_sm1": { "type": "string", "maxLength": 32 },
+        "nilai_sm2": { "type": "string", "maxLength": 32 },
+        "status_sm1": { "type": "string", "maxLength": 64 },
+        "status_sm2": { "type": "string", "maxLength": 64 },
+        "tugas_belum_sm1": { "type": "string", "maxLength": 1000 },
+        "tugas_belum_sm2": { "type": "string", "maxLength": 1000 }
+      }
+    },
+    "users": {
+      "name": "users",
+      "properties": {
+        "username": { "type": "string", "maxLength": 100 },
+        "password_hash": { "type": "string", "maxLength": 255 },
+        "role": { "type": "string", "maxLength": 32 },
+        "nama": { "type": "string", "maxLength": 180 },
+        "nis_nip": { "type": "string", "maxLength": 64 },
+        "kelas": { "type": "string", "maxLength": 64 },
+        "jk": { "type": "string", "maxLength": 16 }
+      }
+    },
+    "kehadiran_siswa": {
+      "name": "kehadiran_siswa",
+      "properties": {
+        "tgl_absen": { "type": "string", "maxLength": 20 },
+        "waktu_input": { "type": "string", "maxLength": 20 },
+        "nis": { "type": "string", "maxLength": 64 },
+        "nama": { "type": "string", "maxLength": 180 },
+        "kelas": { "type": "string", "maxLength": 64 },
+        "jurusan": { "type": "string", "maxLength": 120 },
+        "jk": { "type": "string", "maxLength": 16 },
+        "status": { "type": "string", "maxLength": 32 },
+        "jarak_meter": { "type": "string", "maxLength": 64 }
+      }
+    },
+    "kehadiran_pegawai": {
+      "name": "kehadiran_pegawai",
+      "properties": {
+        "tgl_absen": { "type": "string", "maxLength": 20 },
+        "waktu_input": { "type": "string", "maxLength": 20 },
+        "nip_user": { "type": "string", "maxLength": 64 },
+        "nama": { "type": "string", "maxLength": 180 },
+        "role_jabatan": { "type": "string", "maxLength": 64 },
+        "jk": { "type": "string", "maxLength": 16 },
+        "status": { "type": "string", "maxLength": 32 },
+        "jarak_meter": { "type": "string", "maxLength": 64 }
+      }
+    },
+    "jurnal_harian": {
+      "name": "jurnal_harian",
+      "properties": {
+        "waktu_input": { "type": "string", "maxLength": 40 },
+        "tanggal": { "type": "string", "maxLength": 20 },
+        "guru_nama": { "type": "string", "maxLength": 180 },
+        "jam_ke": { "type": "string", "maxLength": 64 },
+        "kelas": { "type": "string", "maxLength": 64 },
+        "mapel": { "type": "string", "maxLength": 120 },
+        "tujuan": { "type": "string", "maxLength": 1000 },
+        "materi": { "type": "string", "maxLength": 1000 },
+        "metode": { "type": "string", "maxLength": 255 },
+        "refleksi": { "type": "string", "maxLength": 1000 },
+        "tugas": { "type": "string", "maxLength": 1000 },
+        "nilai_progres": { "type": "string", "maxLength": 64 },
+        "foto_url": { "type": "string", "maxLength": 1000 }
+      }
+    },
+    "kalender_pendidikan": {
+      "name": "kalender_pendidikan",
+      "properties": {
+        "tanggal": { "type": "string", "maxLength": 20 },
+        "mode_kbm": { "type": "string", "maxLength": 32 },
+        "status_efektif": { "type": "string", "maxLength": 32 },
+        "jam_mulai": { "type": "string", "maxLength": 16 },
+        "jam_selesai": { "type": "string", "maxLength": 16 },
+        "keterangan": { "type": "string", "maxLength": 500 }
+      }
+    },
+    "data_jurusan": {
+      "name": "data_jurusan",
+      "properties": {
+        "kode": { "type": "string", "maxLength": 32 },
+        "nama": { "type": "string", "maxLength": 180 },
+        "kurikulum": { "type": "string", "maxLength": 120 },
+        "fasilitas": { "type": "string", "maxLength": 500 }
+      }
+    },
+    "nilai_siswa": {
+      "name": "nilai_siswa",
+      "properties": {
+        "tahun_ajaran": { "type": "string", "maxLength": 32 },
+        "semester": { "type": "string", "maxLength": 8 },
+        "nis": { "type": "string", "maxLength": 64 },
+        "mapel": { "type": "string", "maxLength": 120 },
+        "nilai": { "type": "number" },
+        "status": { "type": "string", "maxLength": 64 },
+        "catatan": { "type": "string", "maxLength": 500 },
+        "guru_nama": { "type": "string", "maxLength": 180 },
+        "updated_at": { "type": "string", "maxLength": 40 }
+      }
+    }
+  },
+  "firestore": {
+    "paths": {
+      "/pengaturan/{id}": { "entity": "pengaturan" },
+      "/siswa/{id}": { "entity": "siswa" },
+      "/users/{id}": { "entity": "users" },
+      "/kehadiran_siswa/{id}": { "entity": "kehadiran_siswa" },
+      "/kehadiran_pegawai/{id}": { "entity": "kehadiran_pegawai" },
+      "/jurnal_harian/{id}": { "entity": "jurnal_harian" },
+      "/kalender_pendidikan/{id}": { "entity": "kalender_pendidikan" },
+      "/data_jurusan/{id}": { "entity": "data_jurusan" },
+      "/nilai_siswa/{id}": { "entity": "nilai_siswa" }
+    }
+  }
+}

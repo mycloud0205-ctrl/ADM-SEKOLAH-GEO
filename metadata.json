@@ -1,0 +1,6 @@
+{
+  "name": "Sistem Integrasi Sekolah - SMK KP Baleendah",
+  "description": "Platform Manajemen Akademik, Presensi GPS, Jurnal KBM, Pembinaan Siswa, dan Tugas Digital Real-Time.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
